@@ -218,12 +218,13 @@ SMODS.Booster { -- Program Pack, 1/2
 }
 
 local types = {
+    {key = 'cig_uncommon', name = 'Uncommon Cigarette', tag_type = 'tag_uncommon', tag_fname = 'Rare Tag'},
     {key = 'cig_rare', name = 'Rare Cigarette', tag_type = 'tag_rare', tag_fname = 'Rare Tag'},
     {key = 'cig_negative', name = 'Negative Cigarette', tag_type = 'tag_negative', tag_fname = 'Negative Tag'},
     {key = 'cig_polychrome', name = 'Polychrome Cigarette', tag_type = 'tag_polychrome', tag_fname = 'Polychrome Tag'},
     {key = 'cig_investment', name = 'Investment Cigarette', tag_type = 'tag_investment', tag_fname = 'Investment Tag'},
     {key = 'cig_voucher', name = 'Voucher Cigarette', tag_type = 'tag_voucher', tag_fname = 'Voucher Tag'},
-    {key = 'cig_reroll_boss_blind', name = 'Boss Reroll Cigarette', tag_type = 'tag_reroll_boss_blind', tag_fname = 'Boss Reroll Tag'},
+    {key = 'cig_reroll', name = 'Boss Reroll Cigarette', tag_type = 'tag_boss', tag_fname = 'Boss Reroll Tag'},
     {key = 'cig_ethereal', name = 'Ethereal Cigarette', tag_type = 'tag_ethereal', tag_fname = 'Ethereal Tag'},
     {key = 'cig_handy', name = 'Handy Cigarette', tag_type = 'tag_handy', tag_fname = 'Handy Tag'},
     {key = 'cig_garbage', name = 'Garbage Cigarette', tag_type = 'tag_garbage', tag_fname = 'Garbage Tag'},
