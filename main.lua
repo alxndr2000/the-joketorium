@@ -18,7 +18,7 @@ SMODS.Joker {
     loc_txt = {
         name = 'Viva La Revolution',
         text = {
-            "Earn {C:money}$5{} if a",
+            "Earn {C:money}#1#{} if a",
             "King or Queen is destroyed"
         }
     },
@@ -42,14 +42,25 @@ SMODS.Joker {
     end,
     
     calculate = function(self, card, context)
-        if context.removed then
+        if context.remove_playing_cards then
+            
             for i, removed_card in ipairs(context.removed) do
-                if removed_card.base.value == 12 or removed_card.base.value == 13 then
-                    G.GAME.dollars = G.GAME.dollars + card.ability.extra.money
+                print(removed_card.base.value)
+                if removed_card.base.value == "King" or removed_card.base.value == "Queen" then
                     return {
-                        message = localize{type='variable', key='money', vars={card.ability.extra.money}},
-                        colour = G.C.MONEY
+                        dollars=card.ability.extra.money,
+                        message_card = removed_card
                     }
+                --     G.E_MANAGER:add_event(Event({
+                --     trigger = "after",
+                --     delay = 0.4,
+                --     func = function()
+                --         play_sound("crumple5")
+                --         card:juice_up(0.3, 0.5)
+                --         add_tag(Tag(card.ability.extra.tag_type))
+                --         return true
+                --     end,
+                -- }))
                 end
             end
         end
