@@ -1,0 +1,13 @@
+{
+    "id": "joketorium",
+    "name": "The Joketorium",
+    "author": ["alxndr2000, N8WLD"],
+    "description": "Custom Jokers",
+    "prefix": "joketorium",
+    "main_file": "main.lua",
+    "badge_colour": "FD13FB",
+    "dependencies": [
+        "Steamodded (>=1.0.0~ALPHA-1225a)"
+    ],
+    "version": "1.0.0"
+}
