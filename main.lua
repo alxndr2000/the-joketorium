@@ -14,7 +14,48 @@ SMODS.Atlas { -- Jokers
 --------------------------------------------------------------------------------
 ---                                 JOKERS                                   ---
 --------------------------------------------------------------------------------
-
+SMODS.Joker {
+    key= 'vivalarevolution',
+    loc_txt = {
+        name = 'Viva La Revolution',
+        text = {
+            "Earn {C:money}$5{} if a",
+            "King or Queen is destroyed"
+        }
+    },
+    config = {
+        extra = {
+            money = 5
+        }
+    },
+    rarity = 2,
+    atlas = 'joketorium',
+    blueprint_compat = true,
+    pos = {
+        x = 0,
+        y = 0
+    },
+    cost = 7,
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {card.ability.extra.money} 
+        }
+    end,
+    
+    calculate = function(self, card, context)
+        if context.removed then
+            for i, removed_card in ipairs(context.removed) do
+                if removed_card.base.value == 12 or removed_card.base.value == 13 then
+                    G.GAME.dollars = G.GAME.dollars + card.ability.extra.money
+                    return {
+                        message = localize{type='variable', key='money', vars={card.ability.extra.money}},
+                        colour = G.C.MONEY
+                    }
+                end
+            end
+        end
+    end
+}
 
 SMODS.Joker { -- Jackpot
     key = 'jackpot',
