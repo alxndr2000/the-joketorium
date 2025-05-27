@@ -93,38 +93,50 @@ SMODS.Joker {
     },
     cost = 8,
     loc_vars = function(self, info_queue, card)
-        local count = 0
-        for _, deck_card in ipairs(G.hand.cards) do
-            if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
-                count = count + 1
-            end
-        end
-        for _, deck_card in ipairs(G.play.cards) do
-            if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
-                count = count + 1
-            end
-        end
-        for _, deck_card in ipairs(G.discard.cards) do
-            if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
-                count = count + 1
-            end
-        end
-        for _, deck_card in ipairs(G.deck.cards) do
-            if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
-                count = count + 1
-            end
-        end
-
-        local current_mult = card.ability.extra.xmult + (card.ability.extra.xmult_gain * count)
-        return {
+        -- if not G.deck then
+            return {
             vars = {
-                string.format("%.1f", current_mult),
+                card.ability.extra.xmult,
                 card.ability.extra.xmult_gain           
-            }
-        }
+            } }
+        -- }
+        -- end
+        -- local count = 0
+        -- for _, deck_card in ipairs(G.hand.cards) do
+        --     if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
+        --         count = count + 1
+        --     end
+        -- end
+        -- for _, deck_card in ipairs(G.play.cards) do
+        --     if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
+        --         count = count + 1
+        --     end
+        -- end
+        -- for _, deck_card in ipairs(G.discard.cards) do
+        --     if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
+        --         count = count + 1
+        --     end
+        -- end
+        -- for _, deck_card in ipairs(G.deck.cards) do
+        --     if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
+        --         count = count + 1
+        --     end
+        -- end
+
+        -- local current_mult = card.ability.extra.xmult + (card.ability.extra.xmult_gain * count)
+        -- vars = {
+        --         card.ability.extra.xmult,
+        --         card.ability.extra.xmult_gain           
+        --     }
     end,
     calculate = function(self, card, context)
         if context.joker_main then
+            return {
+                xmult = card.ability.extra.xmult
+            }
+        end
+
+        if context.remove_playing_cards  or context.buying_card or context.playing_card_added then
             local count = 0
             for _, deck_card in ipairs(G.hand.cards) do
                 if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
@@ -146,10 +158,7 @@ SMODS.Joker {
                     count = count + 1
                 end
             end
-
-            return {
-                xmult = card.ability.extra.xmult + (card.ability.extra.xmult_gain * count)  
-            }
+            card.ability.extra.xmult = 1+(card.ability.extra.xmult_gain * count)
         end
     end            
 }
