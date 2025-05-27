@@ -18,7 +18,7 @@ SMODS.Joker {
     loc_txt = {
         name = 'Viva La Revolution',
         text = {
-            "Earn {C:money}#1#{} if a",
+            "Earn {C:money}$#1#{} if a",
             "King or Queen is destroyed"
         }
     },
