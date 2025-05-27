@@ -1,7 +1,7 @@
 /*** Jokers ***/
 /** Common **/
 Ketchup Bottle - Picks a hand to play if played Gain +2 Mult. Cycles through hands. If other hand played loses 1 life has 3 lives.
-Empty Ketchup Bottle (Ketchup must die) - Has the mult of mayo / 2 as xmult
+Empty Ketchup Bottle (Ketchup must die) - Has the mult of Ketchup / 2 as xmult
 Tika Masala - Lasts 3 rounds. Gain + 2 Mult for each Card sold.
 Vindaloo (Tika Masala must die) - Has the mult of tika masala / 2 as money earned at end of round
 Unfortunate Joker - Has +2 mult for all missed wheel of fortunes this run
@@ -14,9 +14,9 @@ Very Unfortunate Joker - Gains 0.5 xmult for each consecutive wheel NOPE. Loses 
 /** Rare **/
 Jackpot - If played hand contains 3 7s then gain +0.25xmult
 Evil Trading Card - If first hand of round has only 1 card, destroy all held in hands cards and earn $1 for each card destroyed
-TV License - $4 per round and generates up to 3 planet cards of your most played hand
+TV License - $4 cost per round and generates up to 3 planet cards of your most played hand
 Muse - After 2 rounds when you sell this create either blueprint or brainstorm
-Floor Ciggy - Generates a random cigarette
+Floor Ciggy - Generates a random cigarette each when blind is selected
 /** Legendary **/
 Nichola - Retrigger all jokers
 
