@@ -247,7 +247,7 @@ for i, t in ipairs(types) do
         },
         atlas = 'cigs',
         pos = {
-            x = i+1,
+            x = i,
             y = 0,
         },
         config = {
