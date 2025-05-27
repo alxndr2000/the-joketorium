@@ -218,7 +218,7 @@ SMODS.Booster { -- Program Pack, 1/2
 }
 
 local types = {
-    {key = 'cig_uncommon', name = 'Uncommon Cigarette', tag_type = 'tag_uncommon', tag_fname = 'Rare Tag'},
+    {key = 'cig_uncommon', name = 'Uncommon Cigarette', tag_type = 'tag_uncommon', tag_fname = 'Uncommon Tag'},
     {key = 'cig_rare', name = 'Rare Cigarette', tag_type = 'tag_rare', tag_fname = 'Rare Tag'},
     {key = 'cig_negative', name = 'Negative Cigarette', tag_type = 'tag_negative', tag_fname = 'Negative Tag'},
     {key = 'cig_polychrome', name = 'Polychrome Cigarette', tag_type = 'tag_polychrome', tag_fname = 'Polychrome Tag'},
@@ -231,7 +231,7 @@ local types = {
     {key = 'cig_double', name = 'Double Cigarette', tag_type = 'tag_double', tag_fname = 'Double Tag'},
 }
 
-for _, t in ipairs(types) do
+for i, t in ipairs(types) do
     SMODS.Consumable {
         key = t.key,
         set = 'Ciggys',
@@ -247,7 +247,7 @@ for _, t in ipairs(types) do
         },
         atlas = 'cigs',
         pos = {
-            x = 0,
+            x = i+1,
             y = 0,
         },
         config = {
