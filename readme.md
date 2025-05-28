@@ -2,13 +2,13 @@
 everything needs art
 ## Jokers
 ### Common
-- [ ] Ketchup Bottle - Picks a hand to play if played Gain +2 Mult. Cycles through hands. If other hand played loses 1 life has 3 lives.
+- [x] Ketchup Bottle - Picks a hand to play if played Gain +2 Mult. Cycles through hands. If other hand played loses 1 life has 3 lives.
 
-- [ ] Empty Ketchup Bottle (Ketchup must die) - Has the mult of mayo / 2 as xmult
+- [x] Empty Ketchup Bottle (Ketchup must die) - Has the mult of mayo / 2 as xmult
 
-- [ ] Tika Masala - Lasts 3 rounds. Gain + 2 Mult for each Card sold.
+- [x] Tika Masala - Lasts 3 rounds. Gain + 2 Mult for each Card sold.
 
-- [ ] Vindaloo (Tika Masala must die) - Has the mult of tika masala / 2 as money earned at end of round
+- [x] Vindaloo (Tika Masala must die) - Has the mult of tika masala / 2 as money earned at end of round
 
 - [ ] Unfortunate Joker - Has +2 mult for all missed wheel of fortunes this run
 
@@ -16,7 +16,7 @@ everything needs art
 ### Uncommon
 - [ ] Credit Score - Gain +1 Mult for each dollar of interest earned each round
 
-- [ ] Giga brain - gain +0.1 xmult for each face card in deck
+- [x] Giga brain - gain +0.1 xmult for each face card in deck
 
 - [x] Viva la revolution - Gain $5 after destroying a king or queen
 
@@ -26,9 +26,9 @@ everything needs art
 
 
 ### Rare
-- [ ] Jackpot - If played hand contains 3 7s then gain +0.25xmult
+- [x] Jackpot - If played hand contains 3 7s then gain +0.25xmult
 
-- [ ] Evil Trading Card - If first hand of round has only 1 card, destroy all held in hands cards and earn $1 for each card destroyed
+- [x] Evil Trading Card - If first hand of round has only 1 card, destroy all held in hands cards and earn $1 for each card destroyed
 
 - [ ] TV License - $4 per round and generates up to 3 planet cards of your most played hand
 
