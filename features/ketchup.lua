@@ -6,7 +6,7 @@ SMODS.Joker { --- Ketchup Bottle
 			"Gains {C:mult}+#2#{} Mult if",
 			"poker hand is {C:attention}#4#{}",
 			"loses a life if not {C:inactive}#3#/3{}",
-			"{C:inactive}(Currently {C:mult}#1#{C:inactive} Mult)"
+			"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
 		}
 	},
 	-- This searches G.GAME.pool_flags to see if Gros Michel went extinct. If so, no longer shows up in the shop.

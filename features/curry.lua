@@ -3,10 +3,10 @@ SMODS.Joker {
 	loc_txt = {
 		name = 'Tikka Masala',
 		text = {
-			"Gains {C:mult}+#2#{} Mult if",
-			"poker hand is {C:attention}#4#{}",
-			"loses a life if not {C:inactive}#3#/3{}",
-			"{C:inactive}(Currently {C:mult}#1#{C:inactive} Mult)"
+			"Gains {C:mult}+#2#{} Mult every",
+			"time you sell a card",
+			"{C:inactive}#3#/3 round remaining{}",
+			"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
 		}
 	},
 	-- This searches G.GAME.pool_flags to see if Gros Michel went extinct. If so, no longer shows up in the shop.
@@ -93,7 +93,7 @@ SMODS.Joker {
 	config = { extra = { Xmult = 0 } },
 	rarity = 1,
 	atlas = 'joketorium',
-	pos = { x = 5, y = 0 },
+	pos = { x = 1, y = 1 },
 	cost = 4,
 	eternal_compat = false,
 	loc_vars = function(self, info_queue, card)
