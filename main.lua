@@ -1,7 +1,7 @@
 --- Loads features
 
 
-local features = {
+local features = { -- we can probably make a config thing for this
     {file = "atlases", enabled = true}, -- TODO "unique atlas for each feature"
     {file = "cigs", enabled =  true},
     {file = "common-jokers", enabled =  true},
