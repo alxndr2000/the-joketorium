@@ -9,6 +9,7 @@ local features = { -- we can probably make a config thing for this
     {file = "rare-jokers", enabled =  true},
     {file = "curry", enabled =  true},
     {file = "ketchup", enabled =  true},
+    {file = "traffic", enabled =  true},
 }
 
 for i, t in ipairs(features) do
