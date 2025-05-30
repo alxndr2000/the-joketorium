@@ -1,7 +1,7 @@
 --- TODO Credit Score, Traffic Light, Very Unfortunate Joker
 
 SMODS.Joker {
-    key= 'vivalarevolution',
+    key= 'viva',
     loc_txt = {
         name = 'Viva La Revolution',
         text = {
@@ -84,7 +84,7 @@ SMODS.Joker {
             }
         end
 
-        if context.remove_playing_cards  or context.buying_card or context.playing_card_added then
+        if context.pre_joker or context.remove_playing_cards or context.buying_card or context.playing_card_added and not context.blueprint then
             local count = 0
             for _, deck_card in ipairs(G.hand.cards) do
                 if deck_card.base.value == "King" or deck_card.base.value == "Queen" or deck_card.base.value == "Jack" then
