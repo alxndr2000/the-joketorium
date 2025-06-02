@@ -20,7 +20,7 @@ everything needs art
 
 - [x] Viva la revolution - Gain $5 after destroying a king or queen
 
-- [ ] Traffic Light - when light shows green beating boss blind gives $15. If yellow nothing happens. If red lose $5 (loops through red, yellow, green)
+- [x] Traffic Light - when light shows green beating boss blind gives $15. If yellow nothing happens. If red lose $5 (loops through red, yellow, green)
 
 - [ ] Very Unfortunate Joker - Gains 0.5 xmult for each consecutive wheel NOPE. Loses all on hit.
 
