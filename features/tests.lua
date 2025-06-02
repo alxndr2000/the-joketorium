@@ -65,3 +65,61 @@ Balatest.TestPlay {
         Balatest.assert_chips(16) -- we should have 10 bucks
     end
 }
+
+--- eval Balatest.run_test 'joketorium_traffic_red_test'
+
+Balatest.TestPlay {
+    name = 'traffic_red_test',
+    category = {'traffic_tests'},
+
+    jokers = { 'j_joketorium_traffic_light' }, -- Start with a Joker
+    
+    execute = function()
+        -- starts on red
+        Balatest.play_hand {'2S'}
+        -- yellow
+        Balatest.play_hand {'2H'}
+        -- green
+        Balatest.play_hand {'2C'}
+        -- red again
+        Balatest.next_round()
+    end,
+    assert = function()
+        Balatest.assert_eq(G.GAME.dollars, 10) -- we should have -5 bucks
+    end
+}
+
+Balatest.TestPlay {
+    name = 'traffic_green_test',
+    category = {'traffic_tests'},
+
+    jokers = { 'j_joketorium_traffic_light' }, -- Start with a Joker
+    
+    execute = function()
+        -- starts on red
+        Balatest.play_hand {'2S'} -- is now yellow
+        Balatest.play_hand {'2H'} -- is now green
+        Balatest.end_round()
+        Balatest.cash_out()
+    end,
+    assert = function()
+        Balatest.assert_eq(G.GAME.dollars, 0) -- we should have 10 bucks
+    end
+}
+
+Balatest.TestPlay {
+    name = 'traffic_yellow_test',
+    category = {'traffic_tests'},
+
+    jokers = { 'j_joketorium_traffic_light' }, -- Start with a Joker
+    
+    execute = function()
+        -- starts on red
+        Balatest.play_hand {'2C'} -- is now yellow
+        Balatest.end_round()
+        Balatest.cash_out()
+    end,
+    assert = function()
+        Balatest.assert_eq(G.GAME.dollars, -5) -- we should have 10 bucks
+    end
+}
