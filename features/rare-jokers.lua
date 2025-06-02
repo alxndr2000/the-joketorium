@@ -55,6 +55,51 @@ SMODS.Joker { -- Jackpot
     end
 }
 
+SMODS.Joker {
+    key = 'muse',
+    loc_txt = {
+        name = "Muse",
+        text = {
+            "After {C:attention}2{} rounds {C:attention}sell this card to",
+            "Create {C:blue}Blueprint{} or {C:money}Brainstorm{}",
+            "{C:inactive}(Currently {C:attention}#1#{}/2){C:inactive}"
+        }
+    },
+    config = {
+        extra = {
+            count = 0
+        }
+    },
+    rarity = 3,
+    atlas = 'joketorium',
+    blueprint_compat = false,
+    pos = { x = 0, y = 0 },
+    loc_vars = function(self, info_queue, card)
+        return { 
+            vars = {card.ability.extra.count}
+        }
+    end,
+    calculate = function(self, card, context)
+        if context.end_of_round then
+            if G.jokers then
+                if context.cardarea == G.jokers then
+                    card.ability.extra.count = card.ability.extra.count + 1
+                end 
+            end
+        end
+        if context.selling_card then 
+            if context.card == card then 
+                if card.ability.extra.count >= 2 then
+                    local choice = math.random(1, 2)
+                    local joker_to_spawn = (choice == 1) and "j_blueprint" or "j_brainstorm"
+                    local new_joker = create_card('j_blueprint', G.jokers, nil, nil)
+                    G.jokers:emplace(new_joker)
+                end
+            end
+        end
+    end
+}
+
 SMODS.Joker { -- Evil Trading Card
     key = 'eviltradingcard',
     loc_txt = {
